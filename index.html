@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Personalized Learning</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Particle Background -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <div class="logo-icon"><i class="fas fa-brain"></i></div>
+            <div class="logo-text">
+                <span class="logo-main">AI Personalized</span>
+                <span class="logo-sub">Learning</span>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="#home">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#visualize">Visualize</a>
+            <a href="#ds-viz">DS Topics</a>
+            <a href="#hype">Market Hype</a>
+            <a href="#quiz">AI Quiz</a>
+        </nav>
+        <div class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></div>
+    </div>
+</header>
+
+<!-- Hero -->
+<section id="home" class="hero">
+    <div class="hero-content container">
+        <div class="hero-badge"><span>✦ AI-Powered Learning Engine</span></div>
+        <h1 class="hero-title">
+            <span class="line1">Master Computer Science</span>
+            <span class="line2">With <em>AI Guidance</em></span>
+        </h1>
+        <p class="hero-desc">Personalized roadmaps, interactive visualizations, real-time skill hype tracking, and AI-driven quizzes — all in one platform built for the modern CS learner.</p>
+        <div class="hero-stats">
+            <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Skills Tracked</span></div>
+            <div class="stat"><span class="stat-num">6</span><span class="stat-label">Learning Levels</span></div>
+            <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Visualizations</span></div>
+        </div>
+        <div class="hero-buttons">
+            <button class="cta-btn" onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">
+                <i class="fas fa-rocket"></i> Start Learning
+            </button>
+            <button class="secondary-btn" onclick="document.getElementById('visualize').scrollIntoView({behavior:'smooth'})">
+                <i class="fas fa-eye"></i> Explore Viz
+            </button>
+        </div>
+    </div>
+    <div class="hero-visual">
+        <div class="floating-cards">
+            <div class="float-card fc1"><i class="fab fa-python"></i><span>Python</span></div>
+            <div class="float-card fc2"><i class="fas fa-robot"></i><span>AI/ML</span></div>
+            <div class="float-card fc3"><i class="fas fa-cloud"></i><span>Cloud</span></div>
+            <div class="float-card fc4"><i class="fas fa-project-diagram"></i><span>DSA</span></div>
+            <div class="float-card fc5"><i class="fab fa-js-square"></i><span>JS</span></div>
+            <div class="float-card fc6"><i class="fas fa-shield-alt"></i><span>Security</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section with Individual Roadmaps -->
+<section id="skills" class="skills-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">SKILL PATHS</span>
+            <h2>Choose Your <span class="gradient-text">Learning Path</span></h2>
+            <p>Click any skill to reveal its complete personalized roadmap, resources & timeline</p>
+        </div>
+        <div class="skills-mega-grid">
+
+            <div class="skill-mega-card" data-skill="python">
+                <div class="smc-header">
+                    <div class="smc-icon python-icon"><i class="fab fa-python"></i></div>
+                    <div class="smc-info">
+                        <h3>Python</h3>
+                        <div class="smc-tags"><span>AI/ML</span><span>Data Science</span><span>Web</span></div>
+                    </div>
+                    <div class="smc-demand">
+                        <div class="demand-ring" style="--pct:96">96%</div>
+                        <span>Market Demand</span>
+                    </div>
+                </div>
+                <div class="smc-roadmap" id="roadmap-python">
+                    <div class="rm-step done"><span class="rm-num">1</span><div><strong>Basics</strong><p>Variables, Data Types, Loops, Functions</p></div><span class="rm-duration">2–4 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">2</span><div><strong>OOP & Modules</strong><p>Classes, Inheritance, pip, venv</p></div><span class="rm-duration">3 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">3</span><div><strong>Data Structures</strong><p>Lists, Dicts, Sets, Comprehensions</p></div><span class="rm-duration">2 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">4</span><div><strong>Libraries</strong><p>NumPy, Pandas, Matplotlib</p></div><span class="rm-duration">4 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">5</span><div><strong>Web / ML</strong><p>Flask/Django or TensorFlow/PyTorch</p></div><span class="rm-duration">8 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">6</span><div><strong>Projects & Portfolio</strong><p>Build 3 real-world projects</p></div><span class="rm-duration">Ongoing</span></div>
+                    <div class="rm-resources">
+                        <strong>📚 Resources:</strong>
+                        <a href="#">Python Docs</a> · <a href="#">CS50P (Free)</a> · <a href="#">Automate Boring Stuff</a>
+                    </div>
+                </div>
+                <button class="toggle-roadmap" onclick="toggleRoadmap('python')"><i class="fas fa-map"></i> View Roadmap</button>
+            </div>
+
+            <div class="skill-mega-card" data-skill="javascript">
+                <div class="smc-header">
+                    <div class="smc-icon js-icon"><i class="fab fa-js-square"></i></div>
+                    <div class="smc-info">
+                        <h3>JavaScript</h3>
+                        <div class="smc-tags"><span>Frontend</span><span>Full Stack</span><span>Node.js</span></div>
+                    </div>
+                    <div class="smc-demand">
+                        <div class="demand-ring" style="--pct:94">94%</div>
+                        <span>Market Demand</span>
+                    </div>
+                </div>
+                <div class="smc-roadmap" id="roadmap-javascript">
+                    <div class="rm-step done"><span class="rm-num">1</span><div><strong>Core JS</strong><p>Syntax, DOM, Events, ES6+</p></div><span class="rm-duration">3 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">2</span><div><strong>Async JS</strong><p>Promises, async/await, Fetch API</p></div><span class="rm-duration">2 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">3</span><div><strong>React</strong><p>Components, Hooks, State Management</p></div><span class="rm-duration">6 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">4</span><div><strong>Node.js</strong><p>Express, REST APIs, Auth</p></div><span class="rm-duration">4 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">5</span><div><strong>Databases</strong><p>MongoDB, SQL, Prisma</p></div><span class="rm-duration">3 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">6</span><div><strong>Full Stack Projects</strong><p>Deploy on Vercel / Render</p></div><span class="rm-duration">Ongoing</span></div>
+                    <div class="rm-resources">
+                        <strong>📚 Resources:</strong>
+                        <a href="#">MDN Web Docs</a> · <a href="#">The Odin Project</a> · <a href="#">javascript.info</a>
+                    </div>
+                </div>
+                <button class="toggle-roadmap" onclick="toggleRoadmap('javascript')"><i class="fas fa-map"></i> View Roadmap</button>
+            </div>
+
+            <div class="skill-mega-card" data-skill="aiml">
+                <div class="smc-header">
+                    <div class="smc-icon ai-icon"><i class="fas fa-robot"></i></div>
+                    <div class="smc-info">
+                        <h3>AI / ML</h3>
+                        <div class="smc-tags"><span>Deep Learning</span><span>NLP</span><span>Vision</span></div>
+                    </div>
+                    <div class="smc-demand">
+                        <div class="demand-ring" style="--pct:99">99%</div>
+                        <span>Market Demand</span>
+                    </div>
+                </div>
+                <div class="smc-roadmap" id="roadmap-aiml">
+                    <div class="rm-step done"><span class="rm-num">1</span><div><strong>Math Foundations</strong><p>Linear Algebra, Calculus, Stats, Probability</p></div><span class="rm-duration">4 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">2</span><div><strong>Python for ML</strong><p>NumPy, Pandas, Matplotlib, Scikit-learn</p></div><span class="rm-duration">3 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">3</span><div><strong>ML Algorithms</strong><p>Regression, Classification, Clustering, SVM</p></div><span class="rm-duration">5 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">4</span><div><strong>Deep Learning</strong><p>Neural Nets, CNNs, RNNs, PyTorch</p></div><span class="rm-duration">8 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">5</span><div><strong>NLP & LLMs</strong><p>Transformers, BERT, Fine-tuning, RAG</p></div><span class="rm-duration">6 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">6</span><div><strong>MLOps & Deploy</strong><p>Docker, FastAPI, HuggingFace, AWS SageMaker</p></div><span class="rm-duration">4 weeks</span></div>
+                    <div class="rm-resources">
+                        <strong>📚 Resources:</strong>
+                        <a href="#">fast.ai</a> · <a href="#">CS229 Stanford</a> · <a href="#">Deep Learning Book</a>
+                    </div>
+                </div>
+                <button class="toggle-roadmap" onclick="toggleRoadmap('aiml')"><i class="fas fa-map"></i> View Roadmap</button>
+            </div>
+
+            <div class="skill-mega-card" data-skill="dsa">
+                <div class="smc-header">
+                    <div class="smc-icon dsa-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="smc-info">
+                        <h3>DSA</h3>
+                        <div class="smc-tags"><span>Interviews</span><span>Competitive</span><span>Core</span></div>
+                    </div>
+                    <div class="smc-demand">
+                        <div class="demand-ring" style="--pct:100">∞</div>
+                        <span>Always Essential</span>
+                    </div>
+                </div>
+                <div class="smc-roadmap" id="roadmap-dsa">
+                    <div class="rm-step done"><span class="rm-num">1</span><div><strong>Arrays & Strings</strong><p>Two pointers, sliding window, hashing</p></div><span class="rm-duration">2 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">2</span><div><strong>Linked Lists & Stacks</strong><p>Fast/slow pointers, monotonic stacks</p></div><span class="rm-duration">2 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">3</span><div><strong>Trees & Graphs</strong><p>BFS, DFS, Dijkstra, Topological Sort</p></div><span class="rm-duration">4 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">4</span><div><strong>Dynamic Programming</strong><p>Memoization, Tabulation, Classic DP patterns</p></div><span class="rm-duration">4 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">5</span><div><strong>Advanced Patterns</strong><p>Tries, Heaps, Union-Find, Segment Tree</p></div><span class="rm-duration">3 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">6</span><div><strong>Interview Prep</strong><p>LeetCode 150, Mock Interviews, System Design</p></div><span class="rm-duration">Ongoing</span></div>
+                    <div class="rm-resources">
+                        <strong>📚 Resources:</strong>
+                        <a href="#">LeetCode</a> · <a href="#">Striver SDE Sheet</a> · <a href="#">NeetCode.io</a>
+                    </div>
+                </div>
+                <button class="toggle-roadmap" onclick="toggleRoadmap('dsa')"><i class="fas fa-map"></i> View Roadmap</button>
+            </div>
+
+            <div class="skill-mega-card" data-skill="cloud">
+                <div class="smc-header">
+                    <div class="smc-icon cloud-icon"><i class="fas fa-cloud"></i></div>
+                    <div class="smc-info">
+                        <h3>Cloud / DevOps</h3>
+                        <div class="smc-tags"><span>AWS</span><span>Docker</span><span>CI/CD</span></div>
+                    </div>
+                    <div class="smc-demand">
+                        <div class="demand-ring" style="--pct:92">92%</div>
+                        <span>Market Demand</span>
+                    </div>
+                </div>
+                <div class="smc-roadmap" id="roadmap-cloud">
+                    <div class="rm-step done"><span class="rm-num">1</span><div><strong>Linux & Networking</strong><p>Shell scripting, TCP/IP, DNS, HTTP</p></div><span class="rm-duration">3 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">2</span><div><strong>Git & CI/CD</strong><p>GitHub Actions, GitLab CI, Jenkins</p></div><span class="rm-duration">2 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">3</span><div><strong>Docker & Containers</strong><p>Dockerfile, Compose, Image Optimization</p></div><span class="rm-duration">2 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">4</span><div><strong>Kubernetes</strong><p>Pods, Deployments, Services, Helm</p></div><span class="rm-duration">4 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">5</span><div><strong>AWS Core</strong><p>EC2, S3, RDS, Lambda, VPC, IAM</p></div><span class="rm-duration">6 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">6</span><div><strong>Terraform & IaC</strong><p>Infrastructure as Code, Cloud Architecture</p></div><span class="rm-duration">4 weeks</span></div>
+                    <div class="rm-resources">
+                        <strong>📚 Resources:</strong>
+                        <a href="#">AWS Free Tier</a> · <a href="#">KodeKloud</a> · <a href="#">roadmap.sh/devops</a>
+                    </div>
+                </div>
+                <button class="toggle-roadmap" onclick="toggleRoadmap('cloud')"><i class="fas fa-map"></i> View Roadmap</button>
+            </div>
+
+            <div class="skill-mega-card" data-skill="security">
+                <div class="smc-header">
+                    <div class="smc-icon sec-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="smc-info">
+                        <h3>Cybersecurity</h3>
+                        <div class="smc-tags"><span>Ethical Hacking</span><span>Pen Testing</span></div>
+                    </div>
+                    <div class="smc-demand">
+                        <div class="demand-ring" style="--pct:88">88%</div>
+                        <span>Market Demand</span>
+                    </div>
+                </div>
+                <div class="smc-roadmap" id="roadmap-security">
+                    <div class="rm-step done"><span class="rm-num">1</span><div><strong>Networking Fundamentals</strong><p>OSI Model, Protocols, Wireshark</p></div><span class="rm-duration">3 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">2</span><div><strong>Linux & Scripting</strong><p>Kali Linux, Bash, Python scripting</p></div><span class="rm-duration">3 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">3</span><div><strong>Web Security</strong><p>OWASP Top 10, SQL Injection, XSS, CSRF</p></div><span class="rm-duration">4 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">4</span><div><strong>Penetration Testing</strong><p>Metasploit, Burp Suite, Nmap</p></div><span class="rm-duration">5 weeks</span></div>
+                    <div class="rm-step"><span class="rm-num">5</span><div><strong>CTF & Bug Bounty</strong><p>HackTheBox, TryHackMe, HackerOne</p></div><span class="rm-duration">Ongoing</span></div>
+                    <div class="rm-resources">
+                        <strong>📚 Resources:</strong>
+                        <a href="#">TryHackMe</a> · <a href="#">HackTheBox</a> · <a href="#">PortSwigger Web Academy</a>
+                    </div>
+                </div>
+                <button class="toggle-roadmap" onclick="toggleRoadmap('security')"><i class="fas fa-map"></i> View Roadmap</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Learning Level Roadmap -->
+<section id="roadmap" class="roadmap-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">JOURNEY MAP</span>
+            <h2>Your CS <span class="gradient-text">Journey</span></h2>
+            <p>From school to PhD — see the full progression</p>
+        </div>
+        <div class="level-tabs">
+            <button class="level-tab active" data-level="school"><i class="fas fa-school"></i> School</button>
+            <button class="level-tab" data-level="college"><i class="fas fa-university"></i> College</button>
+            <button class="level-tab" data-level="btech"><i class="fas fa-graduation-cap"></i> BTech</button>
+            <button class="level-tab" data-level="phd"><i class="fas fa-flask"></i> PhD</button>
+        </div>
+        <div class="roadmap-container">
+            <div id="school" class="roadmap-level active">
+                <div class="roadmap-timeline">
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-calculator"></i></div><div class="timeline-content"><h3>Basic Programming</h3><p>Scratch, Logo, Block Programming, Simple Games</p><div class="tl-tags"><span>🎮 Fun</span><span>⏱ 6 months</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-laptop"></i></div><div class="timeline-content"><h3>Computer Fundamentals</h3><p>Hardware, Software, Binary, Input/Output</p><div class="tl-tags"><span>🔧 Core</span><span>⏱ 3 months</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-gamepad"></i></div><div class="timeline-content"><h3>Logic & Problem Solving</h3><p>Pattern Recognition, Puzzles, Simple Algorithms</p><div class="tl-tags"><span>🧩 Logic</span><span>⏱ 4 months</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-globe"></i></div><div class="timeline-content"><h3>Internet Basics</h3><p>How the web works, Basic HTML, Digital Literacy</p><div class="tl-tags"><span>🌐 Web</span><span>⏱ 3 months</span></div></div></div>
+                </div>
+            </div>
+            <div id="college" class="roadmap-level">
+                <div class="roadmap-timeline">
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-code"></i></div><div class="timeline-content"><h3>C/C++ Programming</h3><p>Variables, Pointers, Memory Management, Recursion</p><div class="tl-tags"><span>💻 Core</span><span>⏱ 6 months</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-database"></i></div><div class="timeline-content"><h3>Data Structures</h3><p>Arrays, Linked Lists, Stacks, Queues, Trees</p><div class="tl-tags"><span>📊 DS</span><span>⏱ 4 months</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-project-diagram"></i></div><div class="timeline-content"><h3>OOP Concepts</h3><p>Encapsulation, Inheritance, Polymorphism, Abstraction</p><div class="tl-tags"><span>🏗️ Design</span><span>⏱ 3 months</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-terminal"></i></div><div class="timeline-content"><h3>Linux & Bash</h3><p>Command Line, File System, Shell Scripts</p><div class="tl-tags"><span>🐧 OS</span><span>⏱ 2 months</span></div></div></div>
+                </div>
+            </div>
+            <div id="btech" class="roadmap-level">
+                <div class="roadmap-timeline">
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-brain"></i></div><div class="timeline-content"><h3>Algorithms & Complexity</h3><p>Sorting, Searching, Big O, Dynamic Programming</p><div class="tl-tags"><span>🔍 Algo</span><span>⏱ 5 months</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-server"></i></div><div class="timeline-content"><h3>Operating Systems & DBMS</h3><p>Processes, Threads, SQL, Transactions, Normalization</p><div class="tl-tags"><span>⚙️ Systems</span><span>⏱ 4 months</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-cloud"></i></div><div class="timeline-content"><h3>Web Dev + Cloud</h3><p>React, Node, REST APIs, Docker, AWS basics</p><div class="tl-tags"><span>☁️ Web</span><span>⏱ 6 months</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-robot"></i></div><div class="timeline-content"><h3>AI / ML Foundations</h3><p>ML Algorithms, Neural Networks, Data Science</p><div class="tl-tags"><span>🤖 AI</span><span>⏱ 5 months</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-briefcase"></i></div><div class="timeline-content"><h3>Internships & Projects</h3><p>Open Source, Hackathons, Portfolio Building</p><div class="tl-tags"><span>💼 Career</span><span>⏱ Ongoing</span></div></div></div>
+                </div>
+            </div>
+            <div id="phd" class="roadmap-level">
+                <div class="roadmap-timeline">
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-dna"></i></div><div class="timeline-content"><h3>Advanced Theory</h3><p>Computational Complexity, Graph Theory, Automata</p><div class="tl-tags"><span>📐 Theory</span><span>⏱ 1 year</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-microchip"></i></div><div class="timeline-content"><h3>Distributed Systems</h3><p>Consensus Algorithms, CAP Theorem, Fault Tolerance</p><div class="tl-tags"><span>🌐 Systems</span><span>⏱ 1 year</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-atom"></i></div><div class="timeline-content"><h3>Research Specialization</h3><p>Choose: AI, Security, Systems, HCI, Quantum</p><div class="tl-tags"><span>🔬 Research</span><span>⏱ 2 years</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"><i class="fas fa-pen-fancy"></i></div><div class="timeline-content"><h3>Publications & Defense</h3><p>Papers, Conferences, Thesis, Dissertation</p><div class="tl-tags"><span>📜 Publish</span><span>⏱ 1-2 years</span></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Visualization Section -->
+<section id="visualize" class="visualization-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">INTERACTIVE</span>
+            <h2>Algorithm <span class="gradient-text">Visualizer</span></h2>
+            <p>Watch algorithms run in real time</p>
+        </div>
+        <div class="vis-tabs">
+            <button class="tab-btn active" data-tab="sorting"><i class="fas fa-sort"></i> Sorting</button>
+            <button class="tab-btn" data-tab="tree"><i class="fas fa-tree"></i> Binary Tree</button>
+            <button class="tab-btn" data-tab="graph"><i class="fas fa-network-wired"></i> Graph BFS/DFS</button>
+            <button class="tab-btn" data-tab="network"><i class="fas fa-project-diagram"></i> Network</button>
+        </div>
+
+        <div id="sorting" class="tab-content active">
+            <div class="vis-controls">
+                <select id="sortAlgo">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="quick">Quick Sort</option>
+                    <option value="merge">Merge Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="selection">Selection Sort</option>
+                </select>
+                <label>Speed: <input type="range" id="sortSpeed" min="1" max="10" value="5"></label>
+                <button id="startSort"><i class="fas fa-play"></i> Visualize</button>
+                <button id="shuffle"><i class="fas fa-random"></i> Shuffle</button>
+                <button id="resetSort"><i class="fas fa-redo"></i> Reset</button>
+            </div>
+            <div class="algo-info" id="sortInfo">Select a sorting algorithm and press Visualize</div>
+            <canvas id="sortCanvas" width="1000" height="420"></canvas>
+        </div>
+
+        <div id="tree" class="tab-content">
+            <div class="vis-controls">
+                <input type="text" id="treeData" value="50,30,70,20,40,60,80,10,25" placeholder="Comma-separated numbers">
+                <button id="buildTree"><i class="fas fa-tree"></i> Build BST</button>
+                <button id="inorder"><i class="fas fa-sort-numeric-down"></i> Inorder</button>
+                <button id="preorder"><i class="fas fa-arrow-right"></i> Preorder</button>
+                <button id="postorder"><i class="fas fa-arrow-left"></i> Postorder</button>
+            </div>
+            <div class="algo-info" id="treeInfo">Build a tree then explore traversals</div>
+            <canvas id="treeCanvas" width="1000" height="480"></canvas>
+        </div>
+
+        <div id="graph" class="tab-content">
+            <div class="vis-controls">
+                <button id="runBFS"><i class="fas fa-broadcast-tower"></i> BFS</button>
+                <button id="runDFS"><i class="fas fa-route"></i> DFS</button>
+                <button id="newGraph"><i class="fas fa-dice"></i> New Graph</button>
+            </div>
+            <div class="algo-info" id="graphInfo">Generate a graph and run BFS or DFS from node 0</div>
+            <canvas id="graphCanvas" width="1000" height="480"></canvas>
+        </div>
+
+        <div id="network" class="tab-content">
+            <div class="vis-controls">
+                <button id="generateNetwork"><i class="fas fa-network-wired"></i> Generate</button>
+                <button id="addNode"><i class="fas fa-plus"></i> Add Node</button>
+            </div>
+            <canvas id="networkCanvas" width="1000" height="480"></canvas>
+        </div>
+    </div>
+</section>
+
+<!-- Data Structure Topic Visualization -->
+<section id="ds-viz" class="ds-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">DS TOPICS</span>
+            <h2>Data Structure <span class="gradient-text">Explorer</span></h2>
+            <p>Interactive animations of core data structures</p>
+        </div>
+        <div class="ds-tabs">
+            <button class="ds-tab active" data-ds="stack"><i class="fas fa-layer-group"></i> Stack</button>
+            <button class="ds-tab" data-ds="queue"><i class="fas fa-stream"></i> Queue</button>
+            <button class="ds-tab" data-ds="linkedlist"><i class="fas fa-link"></i> Linked List</button>
+            <button class="ds-tab" data-ds="hashtable"><i class="fas fa-hashtag"></i> Hash Table</button>
+            <button class="ds-tab" data-ds="heap"><i class="fas fa-mountain"></i> Min Heap</button>
+        </div>
+
+        <div id="ds-stack" class="ds-content active">
+            <div class="ds-layout">
+                <div class="ds-controls-panel">
+                    <h4>Stack Operations</h4>
+                    <div class="ds-op-group">
+                        <input type="number" id="stackInput" placeholder="Enter value" min="1" max="99">
+                        <button onclick="stackPush()"><i class="fas fa-arrow-up"></i> Push</button>
+                    </div>
+                    <button onclick="stackPop()" class="ds-op-btn danger"><i class="fas fa-arrow-down"></i> Pop</button>
+                    <button onclick="stackPeek()" class="ds-op-btn"><i class="fas fa-eye"></i> Peek</button>
+                    <button onclick="stackClear()" class="ds-op-btn warning"><i class="fas fa-trash"></i> Clear</button>
+                    <div class="ds-info-box" id="stackMsg">Stack uses LIFO (Last In, First Out)</div>
+                    <div class="ds-complexity">
+                        <h5>Time Complexity</h5>
+                        <div class="tc-row"><span>Push</span><span class="tc-val green">O(1)</span></div>
+                        <div class="tc-row"><span>Pop</span><span class="tc-val green">O(1)</span></div>
+                        <div class="tc-row"><span>Peek</span><span class="tc-val green">O(1)</span></div>
+                    </div>
+                </div>
+                <div class="ds-visual-panel">
+                    <canvas id="stackCanvas" width="600" height="420"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="ds-queue" class="ds-content">
+            <div class="ds-layout">
+                <div class="ds-controls-panel">
+                    <h4>Queue Operations</h4>
+                    <div class="ds-op-group">
+                        <input type="number" id="queueInput" placeholder="Enter value" min="1" max="99">
+                        <button onclick="queueEnqueue()"><i class="fas fa-sign-in-alt"></i> Enqueue</button>
+                    </div>
+                    <button onclick="queueDequeue()" class="ds-op-btn danger"><i class="fas fa-sign-out-alt"></i> Dequeue</button>
+                    <button onclick="queueFront()" class="ds-op-btn"><i class="fas fa-eye"></i> Front</button>
+                    <button onclick="queueClear()" class="ds-op-btn warning"><i class="fas fa-trash"></i> Clear</button>
+                    <div class="ds-info-box" id="queueMsg">Queue uses FIFO (First In, First Out)</div>
+                    <div class="ds-complexity">
+                        <h5>Time Complexity</h5>
+                        <div class="tc-row"><span>Enqueue</span><span class="tc-val green">O(1)</span></div>
+                        <div class="tc-row"><span>Dequeue</span><span class="tc-val green">O(1)</span></div>
+                        <div class="tc-row"><span>Front</span><span class="tc-val green">O(1)</span></div>
+                    </div>
+                </div>
+                <div class="ds-visual-panel">
+                    <canvas id="queueCanvas" width="600" height="420"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="ds-linkedlist" class="ds-content">
+            <div class="ds-layout">
+                <div class="ds-controls-panel">
+                    <h4>Linked List Operations</h4>
+                    <div class="ds-op-group">
+                        <input type="number" id="llInput" placeholder="Value" min="1" max="99">
+                        <button onclick="llAddFront()">Add Front</button>
+                    </div>
+                    <button onclick="llAddEnd()" class="ds-op-btn"><i class="fas fa-plus"></i> Add End</button>
+                    <button onclick="llDeleteFront()" class="ds-op-btn danger">Delete Front</button>
+                    <button onclick="llDeleteEnd()" class="ds-op-btn danger">Delete End</button>
+                    <button onclick="llClear()" class="ds-op-btn warning"><i class="fas fa-trash"></i> Clear</button>
+                    <div class="ds-info-box" id="llMsg">Singly Linked List — nodes point to next</div>
+                    <div class="ds-complexity">
+                        <h5>Time Complexity</h5>
+                        <div class="tc-row"><span>Insert Head</span><span class="tc-val green">O(1)</span></div>
+                        <div class="tc-row"><span>Insert Tail</span><span class="tc-val yellow">O(n)</span></div>
+                        <div class="tc-row"><span>Search</span><span class="tc-val yellow">O(n)</span></div>
+                    </div>
+                </div>
+                <div class="ds-visual-panel">
+                    <canvas id="llCanvas" width="600" height="420"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="ds-hashtable" class="ds-content">
+            <div class="ds-layout">
+                <div class="ds-controls-panel">
+                    <h4>Hash Table Operations</h4>
+                    <div class="ds-op-group">
+                        <input type="text" id="htKey" placeholder="Key" style="width:80px">
+                        <input type="text" id="htVal" placeholder="Value" style="width:80px">
+                        <button onclick="htInsert()">Insert</button>
+                    </div>
+                    <div class="ds-op-group">
+                        <input type="text" id="htSearch" placeholder="Search key" style="width:120px">
+                        <button onclick="htGet()">Get</button>
+                    </div>
+                    <button onclick="htClear()" class="ds-op-btn warning"><i class="fas fa-trash"></i> Clear</button>
+                    <div class="ds-info-box" id="htMsg">Hash Table: O(1) avg insert & lookup</div>
+                    <div class="ds-complexity">
+                        <h5>Time Complexity</h5>
+                        <div class="tc-row"><span>Insert (avg)</span><span class="tc-val green">O(1)</span></div>
+                        <div class="tc-row"><span>Lookup (avg)</span><span class="tc-val green">O(1)</span></div>
+                        <div class="tc-row"><span>Worst case</span><span class="tc-val red">O(n)</span></div>
+                    </div>
+                </div>
+                <div class="ds-visual-panel">
+                    <canvas id="htCanvas" width="600" height="420"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="ds-heap" class="ds-content">
+            <div class="ds-layout">
+                <div class="ds-controls-panel">
+                    <h4>Min Heap Operations</h4>
+                    <div class="ds-op-group">
+                        <input type="number" id="heapInput" placeholder="Value" min="1" max="99">
+                        <button onclick="heapInsert()"><i class="fas fa-arrow-up"></i> Insert</button>
+                    </div>
+                    <button onclick="heapExtractMin()" class="ds-op-btn danger"><i class="fas fa-arrow-down"></i> Extract Min</button>
+                    <button onclick="heapClear()" class="ds-op-btn warning"><i class="fas fa-trash"></i> Clear</button>
+                    <div class="ds-info-box" id="heapMsg">Min Heap: parent ≤ children always</div>
+                    <div class="ds-complexity">
+                        <h5>Time Complexity</h5>
+                        <div class="tc-row"><span>Insert</span><span class="tc-val yellow">O(log n)</span></div>
+                        <div class="tc-row"><span>Extract Min</span><span class="tc-val yellow">O(log n)</span></div>
+                        <div class="tc-row"><span>Peek Min</span><span class="tc-val green">O(1)</span></div>
+                    </div>
+                </div>
+                <div class="ds-visual-panel">
+                    <canvas id="heapCanvas" width="600" height="420"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skill Hype Section -->
+<section id="hype" class="hype-section">
+    <div class="container">
+        <div class="section-header light">
+            <span class="section-tag light">MARKET ANALYSIS 2025</span>
+            <h2>Skill <span style="color:#ffd93d">Hype</span> & Demand</h2>
+            <p>Real market insights — is it worth your time?</p>
+        </div>
+        <div class="hype-grid">
+            <div class="hype-card hot">
+                <div class="hype-badge">🔥 #1</div>
+                <div class="hype-icon"><i class="fas fa-robot"></i></div>
+                <h3>AI / ML / LLMs</h3>
+                <div class="hype-meters">
+                    <div class="meter-row"><span>Job Demand</span><div class="meter"><div class="meter-fill hot-fill" style="--w:99%"></div></div><span>99%</span></div>
+                    <div class="meter-row"><span>Avg Salary</span><div class="meter"><div class="meter-fill hot-fill" style="--w:97%"></div></div><span>$165K+</span></div>
+                    <div class="meter-row"><span>Future Proof</span><div class="meter"><div class="meter-fill hot-fill" style="--w:100%"></div></div><span>∞</span></div>
+                    <div class="meter-row"><span>Entry Difficulty</span><div class="meter"><div class="meter-fill hot-fill" style="--w:90%"></div></div><span>Very Hard</span></div>
+                </div>
+                <div class="verdict hot-v">🚀 EXTREMELY HOT</div>
+            </div>
+            <div class="hype-card warm">
+                <div class="hype-badge">⚡ #2</div>
+                <div class="hype-icon"><i class="fas fa-cloud"></i></div>
+                <h3>Cloud / DevOps</h3>
+                <div class="hype-meters">
+                    <div class="meter-row"><span>Job Demand</span><div class="meter"><div class="meter-fill warm-fill" style="--w:93%"></div></div><span>93%</span></div>
+                    <div class="meter-row"><span>Avg Salary</span><div class="meter"><div class="meter-fill warm-fill" style="--w:88%"></div></div><span>$135K</span></div>
+                    <div class="meter-row"><span>Future Proof</span><div class="meter"><div class="meter-fill warm-fill" style="--w:90%"></div></div><span>8+ yrs</span></div>
+                    <div class="meter-row"><span>Entry Difficulty</span><div class="meter"><div class="meter-fill warm-fill" style="--w:70%"></div></div><span>Medium</span></div>
+                </div>
+                <div class="verdict warm-v">🔥 VERY HOT</div>
+            </div>
+            <div class="hype-card cool">
+                <div class="hype-badge">⭐ #3</div>
+                <div class="hype-icon"><i class="fas fa-project-diagram"></i></div>
+                <h3>DSA + System Design</h3>
+                <div class="hype-meters">
+                    <div class="meter-row"><span>Interview Need</span><div class="meter"><div class="meter-fill cool-fill" style="--w:100%"></div></div><span>100%</span></div>
+                    <div class="meter-row"><span>Avg Salary</span><div class="meter"><div class="meter-fill cool-fill" style="--w:82%"></div></div><span>$120K</span></div>
+                    <div class="meter-row"><span>Future Proof</span><div class="meter"><div class="meter-fill cool-fill" style="--w:100%"></div></div><span>Forever</span></div>
+                    <div class="meter-row"><span>Entry Difficulty</span><div class="meter"><div class="meter-fill cool-fill" style="--w:85%"></div></div><span>Hard</span></div>
+                </div>
+                <div class="verdict cool-v">⭐ ESSENTIAL</div>
+            </div>
+            <div class="hype-card blue">
+                <div class="hype-badge">💙 #4</div>
+                <div class="hype-icon"><i class="fab fa-python"></i></div>
+                <h3>Python</h3>
+                <div class="hype-meters">
+                    <div class="meter-row"><span>Job Demand</span><div class="meter"><div class="meter-fill blue-fill" style="--w:96%"></div></div><span>96%</span></div>
+                    <div class="meter-row"><span>Avg Salary</span><div class="meter"><div class="meter-fill blue-fill" style="--w:85%"></div></div><span>$125K</span></div>
+                    <div class="meter-row"><span>Future Proof</span><div class="meter"><div class="meter-fill blue-fill" style="--w:95%"></div></div><span>10+ yrs</span></div>
+                    <div class="meter-row"><span>Entry Difficulty</span><div class="meter"><div class="meter-fill blue-fill" style="--w:30%"></div></div><span>Easy</span></div>
+                </div>
+                <div class="verdict blue-v">💙 BEGINNER FRIENDLY</div>
+            </div>
+            <div class="hype-card purple">
+                <div class="hype-badge">🛡️ #5</div>
+                <div class="hype-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Cybersecurity</h3>
+                <div class="hype-meters">
+                    <div class="meter-row"><span>Job Demand</span><div class="meter"><div class="meter-fill purple-fill" style="--w:88%"></div></div><span>88%</span></div>
+                    <div class="meter-row"><span>Avg Salary</span><div class="meter"><div class="meter-fill purple-fill" style="--w:87%"></div></div><span>$130K</span></div>
+                    <div class="meter-row"><span>Future Proof</span><div class="meter"><div class="meter-fill purple-fill" style="--w:95%"></div></div><span>10+ yrs</span></div>
+                    <div class="meter-row"><span>Entry Difficulty</span><div class="meter"><div class="meter-fill purple-fill" style="--w:75%"></div></div><span>Medium-Hard</span></div>
+                </div>
+                <div class="verdict purple-v">🛡️ HIGH DEMAND</div>
+            </div>
+            <div class="hype-card orange">
+                <div class="hype-badge">🌐 #6</div>
+                <div class="hype-icon"><i class="fab fa-js-square"></i></div>
+                <h3>Full Stack Web Dev</h3>
+                <div class="hype-meters">
+                    <div class="meter-row"><span>Job Demand</span><div class="meter"><div class="meter-fill orange-fill" style="--w:91%"></div></div><span>91%</span></div>
+                    <div class="meter-row"><span>Avg Salary</span><div class="meter"><div class="meter-fill orange-fill" style="--w:80%"></div></div><span>$115K</span></div>
+                    <div class="meter-row"><span>Future Proof</span><div class="meter"><div class="meter-fill orange-fill" style="--w:82%"></div></div><span>7+ yrs</span></div>
+                    <div class="meter-row"><span>Entry Difficulty</span><div class="meter"><div class="meter-fill orange-fill" style="--w:45%"></div></div><span>Medium</span></div>
+                </div>
+                <div class="verdict orange-v">🌐 GREAT STARTER</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AI Quiz Section -->
+<section id="quiz" class="quiz-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">AI POWERED</span>
+            <h2>Test Your <span class="gradient-text">Knowledge</span></h2>
+            <p>Dynamic quiz powered by AI — different every time</p>
+        </div>
+        <div class="quiz-container">
+            <div class="quiz-setup" id="quizSetup">
+                <div class="quiz-topic-grid">
+                    <button class="qt-btn active" data-topic="python">🐍 Python</button>
+                    <button class="qt-btn" data-topic="dsa">🔗 DSA</button>
+                    <button class="qt-btn" data-topic="javascript">⚡ JavaScript</button>
+                    <button class="qt-btn" data-topic="os">🖥️ OS Concepts</button>
+                    <button class="qt-btn" data-topic="networking">🌐 Networking</button>
+                    <button class="qt-btn" data-topic="aiml">🤖 AI/ML</button>
+                </div>
+                <div class="quiz-difficulty">
+                    <button class="qd-btn active" data-diff="beginner">Beginner</button>
+                    <button class="qd-btn" data-diff="intermediate">Intermediate</button>
+                    <button class="qd-btn" data-diff="advanced">Advanced</button>
+                </div>
+                <button class="start-quiz-btn" onclick="startQuiz()"><i class="fas fa-play"></i> Start Quiz</button>
+            </div>
+            <div class="quiz-active" id="quizActive" style="display:none">
+                <div class="quiz-header-bar">
+                    <span id="quizTopicLabel">Python Quiz</span>
+                    <span id="quizScore">Score: 0/0</span>
+                    <span id="quizProgress">Q 1/10</span>
+                </div>
+                <div class="quiz-question-box" id="quizQuestionBox">
+                    <div class="quiz-loading"><i class="fas fa-spinner fa-spin"></i> Generating question...</div>
+                </div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <div class="quiz-nav">
+                    <button id="nextQuizBtn" onclick="nextQuestion()" style="display:none"><i class="fas fa-arrow-right"></i> Next Question</button>
+                    <button onclick="endQuiz()"><i class="fas fa-stop"></i> End Quiz</button>
+                </div>
+            </div>
+            <div class="quiz-results" id="quizResults" style="display:none">
+                <div class="result-circle">
+                    <span id="finalScore">0/10</span>
+                </div>
+                <h3 id="resultMsg">Great Job!</h3>
+                <p id="resultDesc">You answered 7 out of 10 correctly.</p>
+                <button onclick="resetQuiz()" class="start-quiz-btn"><i class="fas fa-redo"></i> Try Again</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-logo">
+            <i class="fas fa-brain"></i>
+            <span>AI Personalized Learning</span>
+        </div>
+        <p>Built for CS students, by CS enthusiasts. Learn smart, not hard.</p>
+        <div class="footer-links">
+            <a href="#skills">Skills</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#visualize">Visualize</a>
+            <a href="#hype">Market</a>
+            <a href="#quiz">Quiz</a>
+        </div>
+        <p class="footer-copy">© 2025 AI Personalized Learning. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
